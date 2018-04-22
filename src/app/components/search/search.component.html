@@ -1,0 +1,30 @@
+<section class="container">
+  <div class="form-group">
+    <div class="input-group">
+      <h1>Find facts about Chuck Norris!</h1>
+      <div routerLink="/home" class="buttons">Home</div>
+      <input [formControl]="searchValue" class="buttons searchField" placeholder="Search">
+      <div routerLink="/categories" class="buttons">Categories</div>
+    </div>
+    <div *ngIf="keywordTooShort" class="keyword">Keyword is too short!</div>
+  </div>
+  <ng-container *ngIf="factsFound.length <=10">
+    <ul *ngFor="let fact of factsFound" class="factsFound">
+      <li>{{fact}}</li>
+    </ul>
+  </ng-container>
+  <ng-container *ngIf="factsFound.length > 10">
+    <div class="centerButtons">
+      <div class="buttons" [ngClass]="previousPageButton ? '':'disabled'" (click)="previousPage()">Previous page</div>
+      <div class="buttons" [ngClass]="nextPageButton ? '':'disabled'" (click)="nextPage()">Next page</div>
+    </div>
+    <ul *ngFor="let fact of pagedFacts" class="factsFound">
+      <li>{{fact}}</li>
+    </ul>
+  </ng-container>
+  <div class="noFacts" *ngIf="searchFailed">
+    <img src="assets/nofact.png">
+    <span>No facts found, try again with different keyword!</span>
+  </div>
+
+</section>

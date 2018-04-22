@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+$backgroundColor: #9aa0a8;
+@font-face {
+  font-family: 'Open Sans';
+  src:url(/assets/fonts/OpenSans-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: $backgroundColor;
+}

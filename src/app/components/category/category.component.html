@@ -1,0 +1,19 @@
+<div class="container" #top>
+  <div class="white">
+    <div class="factsHeight">
+    <div class="clearfix"></div>
+    <ul *ngFor="let facts of categoryFacts" class="facts">
+      <li>{{facts}}</li>
+    </ul>
+    </div>
+    <div routerLink="/home" class="buttons">Home</div>
+    <div (click)="getFacts(); scrollToTop(top)" class="buttons" [ngClass]="categoryByURL === undefined? 'disabled':'enbaled'">More facts</div>
+    <div routerLink="/search" class="buttons">Search</div>
+  </div>
+<div class="categoryListContainer">
+  <ul class="cat" *ngFor="let cat of categoryList;let i=index; first as isFirst"
+      [class.first]="isFirst">
+    <li (click)="selectedToggle(cat); getFacts(); scrollToTop(top)" class="{{cat.selected  === true ? 'selectedCSS' : 'unselected'}}">{{cat.name}}</li>
+  </ul>
+</div>
+</div>

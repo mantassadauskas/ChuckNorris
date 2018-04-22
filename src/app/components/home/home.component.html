@@ -1,0 +1,21 @@
+<section class="container">
+  <img class="logo" src="assets/chucklogo.png">
+  <div class="imgContainer">
+    <img class="fade" src="assets/chuckpng.png">
+    <img class="black" src="assets/blackChuck.png">
+    <img class="moveLeft" src="assets/cycloneChuck.png">
+    <img class="moveRight" src="assets/expl.png">
+  </div>
+  <section class="content">
+    <div class="randomFact">{{randomFact}}</div>
+    <ul class="menu">
+      <li (click)="scrollToTop(start)">Categories</li>
+      <li routerLink="/search">Search</li>
+    </ul>
+    <div class="categoryWrapper" #start>
+      <ul class="cat" *ngFor="let cat of categoryList">
+        <li routerLink="/category/{{cat}}" (click)="scrollToTop(top)">{{cat}}</li>
+      </ul>
+    </div>
+  </section>
+</section>

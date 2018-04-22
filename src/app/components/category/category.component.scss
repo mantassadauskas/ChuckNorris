@@ -1,0 +1,170 @@
+.container {
+  text-align: center;
+  animation: onloadFadeIn 0.5s forwards;
+  opacity: 0;
+}
+
+.clearfix {
+  clear: both;
+  padding-top: 50px;
+}
+
+.cat {
+  display: inline-block;
+  width: 22%;
+  text-align: center;
+  padding: 0;
+  list-style: none;
+  li {
+    height: 50px;
+    display: inline-block;
+    margin: 2%;
+    font-size: 36px;
+    text-transform: uppercase;
+    animation: category1 1s;
+    position: relative;
+    cursor: pointer;
+  }
+}
+
+.selectedCSS {
+  color: #FF1919;
+}
+
+.unselected {
+  color: #f0ffff;
+}
+
+.white {
+  background-color: #f0ffff;
+  position: relative;
+  z-index: 2;
+  border-bottom: 2px solid #708090;
+  .factsHeight {
+    min-height: 15em;
+    font-size: 24px;
+  }
+}
+
+.facts {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  min-height: 3em;
+  text-align: left;
+  list-style: none;
+  font-size: 24px;
+  color: #3e4444;
+  font-weight: lighter;
+}
+
+.buttons {
+  display: inline-block;
+  margin: 80px 20px 40px 20px;
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  font-size: 25px;
+  color: #f0ffff;
+  text-align: center;
+  border: 2px solid #708090;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #708090;
+
+}
+
+.buttons:hover {
+  color: #FF1919;
+  border: 2px solid #FF1919;
+  background-color: #f0ffff;
+
+}
+
+.categoryListContainer {
+  padding-bottom: 30px;
+}
+
+.disabled {
+  pointer-events: none;
+  color: black;
+}
+
+@keyframes category1 {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@keyframes onloadFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  .cat li {
+    font-size: 25px;
+  }
+  .buttons {
+    font-size: 20px;
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .clearfix {
+    padding-top: 10px;
+  }
+
+  .white {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    .factsHeight {
+      min-height: 20em;
+    }
+  }
+  .facts {
+    min-height: 6em;
+    margin: 10px auto;
+    padding: 0;
+    width: 90%;
+  }
+  .buttons {
+    display: block;
+    font-size: 20px;
+    width: 80%;
+    margin: 5px auto;
+  }
+  .cat {
+    display: table;
+    width: 80%;
+    margin: auto;
+    border: 1px solid white;
+    border-top: none;
+    padding: 0;
+
+    li {
+      display: table-cell;
+      vertical-align: middle;
+      margin: 0;
+      animation: none;
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+
+    }
+
+  }
+
+  .first {
+    border-top: white solid 1px;
+  }
+}
